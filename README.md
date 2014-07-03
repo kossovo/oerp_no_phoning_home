@@ -4,7 +4,7 @@ Stop Phoning Home Feature from OpenERP
 Note:
 -----
 
-* For V8 checkour master branch
+* For V8 checkout master branch
 * for V7 checkout 7.0 branch
 
 Remove Few Phoning home feature effect from Core OpenERP.
