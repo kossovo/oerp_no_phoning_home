@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-
-
         <record id="mail.ir_cron_module_update_notification" model="ir.cron">
             <field name="name">Update Notification</field>
             <field eval="False" name="active" />
@@ -16,14 +14,14 @@
             <field eval="'(None,)'" name="args" />
             <field name="priority">1000</field>
         </record>
-        
+
         <template id="assets_backend" name="oerp_no_phoning_home assets" inherit_id="web.assets_backend">
             <xpath expr="." position="inside">
                 <script type="text/javascript" src="/oerp_no_phoning_home/static/src/js/announcement.js"></script>
             </xpath>
-            <xpath expr="//script[@src='/mail/static/src/js/announcement.js']" position="replace">
-            
-            </xpath>
+            <!--xpath expr="//script[@src='/mail/static/src/js/announcement.js']" position="replace">
+
+            </xpath-->
         </template>
     </data>
 </openerp>
