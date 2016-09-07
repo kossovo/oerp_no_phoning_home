@@ -20,15 +20,12 @@
 #############################################################################
 
 import logging
-from openerp.tools.config import config
+from odoo.tools.config import config
 config['publisher_warranty_url'] = ''
 _logger = logging.getLogger(__name__)
 from openerp.models import AbstractModel
 from openerp import api
 
-from openerp.tools import config
-
-config['publisher_warranty_url'] = ''
 
 
 class publisher_warranty_contract(AbstractModel):
