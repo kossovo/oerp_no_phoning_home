@@ -23,9 +23,9 @@ import logging
 from odoo.tools.config import config
 config['publisher_warranty_url'] = ''
 _logger = logging.getLogger(__name__)
-from openerp.models import AbstractModel
-from openerp import api
-
+from odoo.models import AbstractModel
+from odoo import api
+from odoo.release import version_info
 
 
 class publisher_warranty_contract(AbstractModel):
@@ -33,17 +33,31 @@ class publisher_warranty_contract(AbstractModel):
 
     @api.model
     def _get_message():
+        if version_info and isinstance(version_info, (list,tuple)) and 'e' == version_info[-1]:
+            ret =super(publisher_warranty_contract, self)._get_message()
+            return ret
         return {}
 
     @api.model
     def _get_sys_logs():
+        if version_info and isinstance(version_info, (list,tuple)) and 'e' == version_info[-1]:
+            ret = super(publisher_warranty_contract, self)._get_sys_logs()
+            return ret
         return
 
     @api.multi
     def update_notification(ids, cron_mode=True):
-
+        if version_info and isinstance(version_info, (list,tuple)) and 'e' == version_info[-1]:
+            return super(publisher_warranty_contract, self).update_notification(
+                cr, uid, ids, cron_mode=cron_mode, context=context)
         _logger.info("NO More Spying Stuff")
         return True
 
+    @api.model
+    def set_notification_update(self, cron_id):
+        if version_info and isinstance(version_info, (list,tuple)) and 'e' == version_info[-1]:
+            self.env['ir.cron'].browse(cron_id).write({'active': True})
+        else:
+            self.env['ir.cron'].browse(cron_id).write({'active': False})
 publisher_warranty_contract()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
