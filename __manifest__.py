@@ -20,7 +20,7 @@
 #/#############################################################################
 {
     'name': 'Stop Phoning Home',
-    'version': '10.0.1',
+    'version': '11.0.1',
     'category': '',
     "sequence": 14,
     'complexity': "easy",
@@ -32,7 +32,7 @@
     """,
     'author': 'BizzAppDev',
     'website': 'www.bizzappdev.com',
-    'depends': ["mail",'web'],
+    'depends': ["mail", 'web'],
     'init_xml': [],
     'data': [
         "base_view.xml",
@@ -41,10 +41,10 @@
     'demo_xml': [],
     'test': [
     ],
-    'qweb' : [
+    'qweb': [
         "static/src/xml/base.xml",
     ],
-    'installable': True,
-    'auto_install': True,
+    'installable': False,
+    'auto_install': False,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
